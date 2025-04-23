@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBoost - Mental Health & Productivity Platform</title>
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #6c63ff;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .hero {
+            padding: 4rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+        
+        .icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        
+        .problem-section {
+            background: #f8f9fa;
+        }
+        
+        .problem-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .featured-label {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MindBoost</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#problem">The Problem</a>
+                    <a href="#solution">Solution</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+            <div class="hero">
+                <h1>Strengthen Your Mind, Sharpen Your Performance</h1>
+                <p>A comprehensive digital platform that integrates mental health support with productivity tools to help you reduce stress while improving focus and efficiency.</p>
+                <a href="#" class="btn">Download App</a>
+                <a href="#" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">🧠</div>
+                    <h3>Mental Health Tools</h3>
+                    <p>Daily mood tracking, guided meditations, CBT-based self help modules, and access to licensed therapists.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Productivity Boosters</h3>
+                    <p>Smart to-do lists, focus timers, personalized goal tracking, and habit formation tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">👥</div>
+                    <h3>Community Support</h3>
+                    <p>Peer groups, challenge-based engagement, and accountability partners to keep you motivated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <h2>The Mental Health Productivity Gap</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Modern professionals face increasing mental health challenges while struggling to stay productive. Existing tools fail to bridge the gap between well-being and performance.</p>
+            
+            <div class="problem-stats">
+                <div class="stat-card">
+                    <div class="stat-number">77%</div>
+                    <p>of workers experience burnout leading to emotional fatigue and poor performance</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$300B</div>
+                    <p>lost annually by companies due to stress-related productivity issues</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1 in 4</div>
+                    <p>young adults report symptoms of anxiety or depression (WHO)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution">
+        <div class="container">
+            <h2>Our Unique Solution</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">🤖</div>
+                    <h3>AI-Powered Personalization</h3>
+                    <p>Our platform learns your patterns and provides tailored recommendations for both mental wellness and productivity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h3>Seamless Integration</h3>
+                    <p>Works with tools you already use like Google Calendar, Slack, and Microsoft Teams.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Data-Driven Insights</h3>
+                    <p>Get real-time feedback on the connection between your mood and productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="problem-section">
+        <div class="container">
+            <h2>Pricing Plans</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Freemium</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul style="text-align: left; list-style-type: none; padding: 0;">
+                        <li>✓ Basic mood tracking</li>
+                        <li>✓ Limited meditation library</li>
+                        <li>✓ Community access</li>
+                        <li>✗ Advanced analytics</li>
+                        <li>✗ Therapist access</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-label">MOST POPULAR</div>
+                    <h3>Premium</h3>
+                    <div class="price">$9<span>/month</span></div>
+                    <ul style="text-align: left; list-style-type: none; padding: 0;">
+                        <li>✓ All Freemium features</li>
+                        <li>✓ Unlimited meditation library</li>
+                        <li>✓ Productivity tools</li>
+                        <li>✓ Basic analytics</li>
+                        <li>✗ Therapist access</li>
+                    </ul>
+                    <a href="#" class="btn" style="margin-top: 1.5rem;">Get Premium</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Professional</h3>
+                    <div class="price">$15<span>/month</span></div>
+                    <ul style="text-align: left; list-style-type: none; padding: 0;">
+                        <li>✓ All Premium features</li>
+                        <li>✓ Therapist access (2 sessions/month)</li>
+                        <li>✓ Advanced analytics</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Workplace integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">Get Professional</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem;">Looking for enterprise or institutional pricing? <a href="#">Contact our sales team</a></p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <form>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Name</label>
+                        <input type="text" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email</label>
+                        <input type="email" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Message</label>
+                        <textarea style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; min-height: 150px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo" style="font-size: 1.8rem;">MindBoost</div>
+            <p>One platform to strengthen minds and sharpen performance.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="social-icons">
+                <a href="#">📱</a>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📸</a>
+                <a href="#">🔗</a>
+            </div>
+            <p>© 2023 MindBoost. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
